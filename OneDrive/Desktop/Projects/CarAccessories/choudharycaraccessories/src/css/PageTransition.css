@@ -1,0 +1,15 @@
+.page-container {
+  min-height: 100vh;
+  background: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px; /* Adds depth to the flip */
+}
+
+.page-container div {
+  transform-style: preserve-3d;
+  will-change: transform;
+}

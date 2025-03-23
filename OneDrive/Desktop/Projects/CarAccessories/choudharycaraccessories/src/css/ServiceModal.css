@@ -1,0 +1,42 @@
+/* Remove default link styles */
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content ul li {
+  margin: 5px 0;
+}
+
+/* Remove underlines */
+.modal-content ul li a {
+  text-decoration: none;
+  color: white; /* Adjust as needed */
+  font-size: 0.8rem;
+  position: relative;
+  display: inline-block;
+  padding: 5px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect: Color change & animated underline */
+.modal-content ul li a:hover {
+  color: #c32227; /* Adjust hover color */
+}
+
+/* Underline animation */
+.modal-content ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #c32227; /* Adjust underline color */
+  transition: width 0.3s ease-in-out;
+}
+
+.modal-content ul li a:hover::after {
+  width: 100%;
+}

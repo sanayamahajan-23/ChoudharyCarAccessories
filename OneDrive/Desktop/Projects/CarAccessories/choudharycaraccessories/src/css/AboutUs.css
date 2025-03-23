@@ -1,0 +1,220 @@
+.about-section {
+  background: black;
+  color: white;
+  padding: 40px 25px;
+  font-family: "Times New Roman", serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px; /* Ensures the heading appears below the navbar */
+}
+
+/* Title & Subtitle */
+.about-section .section-title {
+  color: white;
+  font-size: 28px;
+  text-align: left;
+  border-bottom: 2px solid #c32227;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.about-title {
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  gap: 15px; /* Adjust spacing */
+}
+
+.about-title h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.about-title .red-line {
+  flex-grow: 1;
+  height: 3px;
+  background-color: red;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 18px;
+  min-width: 300px;
+  max-width: 600px; /* Adjust the width to wrap properly */
+  text-align: justify;
+}
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    margin: 10px 0;
+}
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* About Content Layout */
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
+}
+.message-title {
+  font-size: 22px;
+  color: white;
+  margin-bottom: 15px;
+}
+/* Owner Flip Card */
+.owner-card {
+  margin-top: 20px;
+  position: relative;
+  width: 400px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.owner-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-front {
+  background: white;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid #c32227;
+}
+
+.card-back {
+  background: white;
+  transform: rotateY(180deg);
+}
+
+.owner-image {
+  width: 80%;
+  display: block;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.owner-message {
+  color: black;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+/* Flip Button */
+.flip-button {
+  background: transparent;
+  border: 2px solid #c32227;
+  color: #c32227;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.flip-button:hover {
+  background: #c32227;
+  color: white;
+}
+
+/* Red Overline */
+.red-overline {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #c32227;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+/* Service Icons */
+.services {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.service-item {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  width: 100px;
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: #c32227;
+  border-radius: 50%;
+  margin: 0 auto 5px auto;
+}
+
+.service-item p {
+  text-align: center;
+  word-wrap: break-word;
+  white-space: pre-line;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .owner-card {
+    width: 300px;
+    height: 400px;
+  }
+
+  .services {
+    display: none;
+  }
+}

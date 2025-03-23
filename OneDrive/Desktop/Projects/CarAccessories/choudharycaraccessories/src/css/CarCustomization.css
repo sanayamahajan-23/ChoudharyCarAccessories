@@ -1,0 +1,196 @@
+/* Container */
+.car-customization-container {
+  width: 100%;
+  padding: 0 20px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+/* Grid Layout */
+.content-container {
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr; /* Info section (1.5), Road section (2.5) */
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  align-items: stretch;
+}
+
+/* Text Section */
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title */
+.service-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Appointment Button */
+.car-customization-container .appointment-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 30px;
+  border: 2px solid #c32227;
+  background: #c32227;
+  color: white;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.car-customization-container .appointment-btn:hover {
+  background: transparent;
+  color: #c32227;
+}
+
+/* Sub-Service List */
+.sub-service-list {
+  background: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid #c32227;
+}
+
+/* Grey Line Under Each Item */
+.sub-service-list p {
+  padding: 10px 0;
+  border-bottom: 2px solid grey;
+}
+
+/* Remove Line from Last Item */
+.sub-service-list p:last-child {
+  border-bottom: none;
+}
+
+/* Road Section */
+.road-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretzz;
+  gap: 20px;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Road Container */
+.road-container {
+  position: relative;
+  width: 180px;
+  height: 100vh; /* Full height of viewport */
+  overflow: hidden;
+  display: flex;
+  align-items: center; /* Center the road inside the container */
+}
+
+/* Road Image */
+.road-img {
+  width: 100%;
+  height: 100%; /* Ensure the road extends fully */
+  display: block;
+  position: absolute;
+  object-fit: cover; /* Stretch to fit the container */
+}
+/* Car Animation */
+.car-img {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100vh);
+  transition: transform 1.2s ease-out;
+}
+/* Car Animation */
+.car-img1 {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100vh);
+  transition: transform 1.2s ease-out;
+}
+
+.slide-top {
+  transform: translateX(-50%) translateY(0) !important; /* Move down */
+}
+
+.car-img1:not(.slide-top) {
+  transform: translateX(-50%) translateY(-100px); /* Start off-screen */
+}
+
+/* Slide from Bottom (Road 3) */
+.slide-bottom {
+  transform: translateX(-50%) translateY(-10vh); /* Move up */
+}
+
+.car-img:not(.slide-bottom) {
+  transform: translateX(-50%) translateY(100px); /* Start off-screen */
+}
+@media (min-width:769px) and (max-width:1024px){
+  .car-customization-container .appointment-btn{
+    position:relative;
+    top:50px;/* Add space between button and footer */
+    left: 10px;
+  }
+}
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .road-img {
+    width: 100%;
+    height: 100%;
+  }
+  .service-info {
+    width: 100%;
+  }
+  road1{
+    gap:0;
+    margin:0;
+    padding:0;
+  }
+  .road2 {
+    display: none;
+  }
+  .road-section {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .road3 {
+    display: none;
+  }
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sub-service-list {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px; /* Reduce space below sub-services */
+  }
+  .car-customization-container {
+    padding-top: 0;
+  }
+  .car-customization-container .appointment-btn {
+    position:relative;
+    top:20px;/* Add space between button and footer */
+    left: 10px;
+  }
+}

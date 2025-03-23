@@ -1,0 +1,147 @@
+/* Home Page Layout */
+
+.home-container {
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 24px 0;
+}
+.home-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Times New Roman", serif;
+  color: white;
+  background: black;
+  padding: 15px 0;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Space between text and lines */
+  width: 100%;
+}
+
+.home-container h1::before,
+.home-container h1::after {
+  content: "";
+  flex-grow: 1; /* Makes the lines adjust dynamically */
+  height: 2px;
+  background-color: white;
+}
+/* 📌 Collage Grid for Desktop */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 6-column layout */
+  grid-template-rows: repeat(5, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+/* 🎨 Service Card Styling */
+.service-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔹 Custom Layout for Desktop (Collage Effect) */
+.service-card:nth-child(1) {
+  grid-column: span 3;
+}
+.service-card:nth-child(2) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.service-card:nth-child(3) {
+  grid-column: span 2;
+  grid-row: span 4;
+}
+.service-card:nth-child(4) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.service-card:nth-child(5) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.service-card:nth-child(6) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.service-card:nth-child(7) {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+/* 🔥 Hover Effect */
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+/* 🖼️ Image Styling */
+.service-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 📱 Mobile Layout: Alternating Design */
+@media (max-width: 1024px) {
+  .services-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr); /* 6-column layout */
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .service-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 15px;
+    gap: 15px;
+    flex-direction: row;
+  }
+
+  /* 🟢 Full-width for 1st, 4th, and 7th cards */
+  .service-card:nth-child(1),
+  .service-card:nth-child(4),
+  .service-card:nth-child(7) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .service-card:nth-child(2),
+  .service-card:nth-child(3),
+  .service-card:nth-child(5),
+  .service-card:nth-child(6) {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  /* 📏 Image Adjustments */
+  .service-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .service-card h2 {
+    font-size: 18px;
+  }
+
+  .service-text {
+    flex: 1;
+  }
+}
