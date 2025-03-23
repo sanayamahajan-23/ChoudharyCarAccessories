@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-
+const path = require("path");
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -15,7 +15,19 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
-
+const _dirname = path.dirname("")
+const buildPath = path.join(_dirname, "../client/build")
+app.use(express.static(buildPath))
+app.get("/*", function (req, res) {
+  res.sendFile(
+    path.join(__dirname, "../client/build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+})
 // 📩 Contact Form Email Route
 app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
