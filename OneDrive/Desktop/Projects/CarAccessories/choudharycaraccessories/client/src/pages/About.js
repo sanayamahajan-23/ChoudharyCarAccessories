@@ -10,7 +10,10 @@ const AboutUs = () => {
 
   return (
     <PageWrapper>
-      <div className="about-section">
+      <div
+        className="about-section"
+        style={{ backgroundImage: `url("/assets/carbon-fibre.png")` }}
+      >
         <div className="container">
           <div class="about-title">
             <h1>ABOUT US</h1>

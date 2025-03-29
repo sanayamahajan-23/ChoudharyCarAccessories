@@ -10,13 +10,17 @@ const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]); // Close menu when route changes
+
   return (
     <>
       <nav className="mobile-navbar">
-        <img src="/assets/logo.png" alt="Logo" className="logo" />
+        <NavLink to="/">
+          <img src="/assets/logo.png" alt="Logo" className="logo" />
+        </NavLink>
 
         <NavLink
           to="/book-us"
@@ -31,6 +35,7 @@ const MobileNavbar = () => {
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
+          <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
         </div>

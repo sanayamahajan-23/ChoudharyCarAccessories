@@ -24,7 +24,10 @@ html {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  background-size: cover; /* Ensures it covers the entire background */
+  background-repeat: repeat; /* Makes sure it tiles properly */
+  background-attachment: fixed; /* Keeps it fixed while scrolling */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

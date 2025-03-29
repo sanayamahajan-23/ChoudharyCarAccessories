@@ -19,60 +19,67 @@
 .mobile-navbar .logo {
   height: 50px;
   margin-left: 50px;
+  bottom:5px;
 }
 .hamburger {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 25px;
+  height: 24px;
   cursor: pointer;
   position: absolute;
-  right: 45px; /* Aligns to the right */
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1001;
-  order: 3; /* Ensures it appears after the button */
 }
 
 .bar {
-  border-radius: 20px;
-  border: 2px solid #ffffff;
-  background-color: transparent;
-  height: 5px;
+  border-radius: 10px;
+  background-color: white;
+  height: 4px;
   width: 100%;
   transition: all 0.3s ease-in-out;
 }
 
-/* Transform hamburger to "X" */
+/* Proper X Formation */
 .hamburger.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5.5px, 5.5px);
-}
-.hamburger.active .bar:nth-child(2) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: translateY(10px) rotate(45deg);
 }
 
-/* Mobile Menu - Remove Fixed Height */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+
+/* Mobile Menu - Centered */
 .mobile-menu {
   position: fixed;
-  top: 110px;
-  right: 50px;
-  width: 85%;
+  top: 80px; /* Adjust according to navbar height */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* Adjust width as needed */
   background: #2e2e2e;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start; /* Align to top so dropdown can expand */
+  align-items: center;
+  justify-content: flex-start;
   padding: 20px;
-  transform: rotateY(90deg);
   opacity: 0;
   transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
-  max-height: 90vh; /* Remove hard height */
-  overflow-y: auto; /* Allow scroll if needed */
+  max-height: 90vh; /* Prevents overflow */
+  overflow-y: auto;
 }
+
+/* Open state */
 .mobile-menu.open {
-  transform: rotateY(0deg); /* Show menu */
+  transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
 

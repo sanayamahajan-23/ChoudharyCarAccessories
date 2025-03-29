@@ -42,7 +42,10 @@ const Home = () => {
 
   return (
     <PageWrapper>
-      <div className="home-container">
+      <div
+        className="home-container"
+        style={{ backgroundImage: `url("/assets/carbon-fibre.png")` }}
+      >
         {/* Car Carousel */}
         <CarCarousel />
 

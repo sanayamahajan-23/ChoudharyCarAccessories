@@ -28,12 +28,13 @@ const Brands = () => {
 
   return (
     <PageWrapper>
-      <div className="brands-container">
+      <div
+        className="brands-container"
+        style={{ backgroundImage: `url("/assets/carbon-fibre.png")` }}
+      >
         {/* Partner Brands Section */}
         <div className="section-header">
-          <h2 className="section-title">
-            Authorized Distributors
-          </h2>
+          <h2 className="section-title">Authorized Distributors</h2>
           <span className="red-line"></span>
         </div>
         <div className="partner brands-grid">

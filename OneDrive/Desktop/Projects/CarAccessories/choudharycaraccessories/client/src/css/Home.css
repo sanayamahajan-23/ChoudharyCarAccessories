@@ -2,7 +2,7 @@
 
 .home-container {
   min-height: 100vh;
-  background-color: black;
+
   color: white;
   padding: 24px 0;
   overflow-x: hidden;
@@ -12,7 +12,7 @@
   font-weight: bold;
   font-family: "Times New Roman", serif;
   color: white;
-  background: black;
+  
   padding: 15px 0;
   text-align: center;
   position: relative;
@@ -102,21 +102,26 @@
 
 /* 📱 Mobile Layout: Alternating Design */
 @media (max-width: 1024px) {
-  .services-container {
+   .services-container {
     display: grid;
-    gap: 5px;
-    margin:0  70px 0 0;
-    grid-template-columns: repeat(2, 1fr); /* 6-column layout */
-    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    margin: 0 auto; /* Centers the grid */
+    padding: 0 10px; /* Prevents right-side cut off */
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    width: 90%; /* Keeps it inside the screen */
+    max-width: 100%; /* Ensures full responsiveness */
+    box-sizing: border-box; /* Prevents layout issues */
   }
 
   .service-card {
     display: flex;
     align-items: center;
-    text-align: left;
-    padding: 8px;
+    text-align: center;
+    padding: 10px;
     gap: 5px;
-    flex-direction: row;
+    flex-direction: column;
+    width: 100%; /* Ensures card doesn't overflow */
+    box-sizing: border-box;
   }
 
   /* 🟢 Full-width for 1st, 4th, and 7th cards */

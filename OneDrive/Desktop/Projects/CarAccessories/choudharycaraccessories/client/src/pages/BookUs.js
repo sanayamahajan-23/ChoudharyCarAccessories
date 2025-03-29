@@ -144,7 +144,10 @@ const BookUs = () => {
 
   return (
     <PageWrapper>
-      <div className="book-us-container">
+      <div
+        className="book-us-container"
+        style={{ backgroundImage: `url("/assets/carbon-fibre.png")` }}
+      >
         {/* Heading with Red Line */}
         <div className="book-us-header">
           <h2 className="book-us-title">BOOK US</h2>
@@ -232,14 +235,14 @@ const BookUs = () => {
           {/* Contact Info */}
           <div className="other-ways">
             {/* Book an Appointment Button (Above Contact) */}
-            <a href="tel:+1234567890" className="book-appointment-btn">
+            <a href="tel:+919419237723" className="book-appointment-btn">
               Book an Appointment
             </a>
             <div className="other-ways-container">
               <div className="other-ways-header">Other Ways to Reach Us</div>
               <div className="other-ways-content">
-                <p>Phone 1: +1234567890</p>
-                <p>Phone 2: +0987654321</p>
+                <p>Phone 1: +919419237723</p>
+                <p>Phone 2: +918715938181</p>
               </div>
             </div>
           </div>

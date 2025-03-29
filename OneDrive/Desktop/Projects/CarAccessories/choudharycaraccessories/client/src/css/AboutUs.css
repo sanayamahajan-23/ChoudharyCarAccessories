@@ -1,5 +1,7 @@
 .about-section {
   background: black;
+  background-size: cover;
+  background-repeat: repeat;
   color: white;
   padding: 40px 25px;
   font-family: "Times New Roman", serif;

@@ -17,7 +17,10 @@ const CarCare = () => {
 
   return (
     <PageTransition>
-      <div className="car-customization-container">
+      <div
+        className="car-customization-container"
+        style={{ backgroundImage: `url("/assets/carbon-fibre.png")` }}
+      >
         <div className={`content-container ${isMobile ? "mobile-layout" : ""}`}>
           {/* Text Section */}
           <div className="text-section">

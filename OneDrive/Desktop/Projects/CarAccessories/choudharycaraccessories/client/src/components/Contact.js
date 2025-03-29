@@ -60,15 +60,15 @@ const ContactSection = () => {
           <div className="contact-details">
             <div className="contact-item">
               <img src="/assets/location.png" alt="Location" className="icon" />{" "}
-              <p>Jammu, India</p>
+              <p>51/f shastri nagar , near nirankari bhawan,jammu</p>
             </div>
             <div className="contact-item">
               <img src="/assets/telephone.png" alt="Phone" className="icon" />{" "}
-              <p>+91 1234567890</p>
+              <p>+91 9419237723</p>
             </div>
             <div className="contact-item">
               <img src="/assets/mail.png" alt="Email" className="icon" />{" "}
-              <p>contact@choudharyaccessories.com</p>
+              <p>contact@choudharycaraccessories.com</p>
             </div>
           </div>
 
@@ -105,22 +105,16 @@ const ContactSection = () => {
             </form>
           </div>
           <div className="social-icons">
+            
             <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/assets/facebook.png" alt="Facebook" />
-            </a>
-            <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/choudhary_car_accessories?igsh=MTM0Zmdhdzl6emZmZQ=="
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="/assets/instagram.png" alt="Instagram" />
             </a>
             <a
-              href="https://wa.me/911234567890"
+              href="https://wa.me/+919419237723"
               target="_blank"
               rel="noopener noreferrer"
             >
