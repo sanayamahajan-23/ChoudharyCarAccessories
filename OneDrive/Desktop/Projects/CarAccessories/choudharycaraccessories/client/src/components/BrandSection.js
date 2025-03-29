@@ -1,18 +1,24 @@
 import React from "react";
 import "../css/Brand.css";
+import { useNavigate } from "react-router-dom";
 const brandLogos = [
-  "/assets/brand1.png",
-  "/assets/brand2.png",
-  "/assets/brand3.png",
-  "/assets/brand4.png",
-  "/assets/brand5.png",
-  "/assets/brand6.png",
-  "/assets/brand7.png",
-  "/assets/brand8.png",
-  "/assets/brand9.png",
+  "/assets/brand-1.png",
+  "/assets/brand-2.png",
+  "/assets/brand-3.png",
+  "/assets/brand-4.png",
+  "/assets/brand-5.png",
+  "/assets/brand-6.png",
+  "/assets/brand-7.png",
+  "/assets/brand-8.png",
+  "/assets/brand-9.png",
 ];
 
 const BrandsSection = () => {
+  const navigate = useNavigate(); // Initialize navigate function
+
+  const handleViewMore = () => {
+    navigate("/brands"); // Navigate to /brands
+  };
   return (
     <section className="brands-section">
       <div className="brands-content">
@@ -36,7 +42,9 @@ const BrandsSection = () => {
       </div>
 
       {/* View More Button */}
-      <button className="view-more-btn">VIEW MORE</button>
+      <button className="view-more-btn" onClick={handleViewMore}>
+        VIEW MORE
+      </button>
     </section>
   );
 };

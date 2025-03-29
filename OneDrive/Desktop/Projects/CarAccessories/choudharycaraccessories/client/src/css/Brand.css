@@ -44,7 +44,7 @@
   height: 90px;
   border-radius: 50%;
   border: 2px solid #c32227;
-  background: rgba(255, 255, 255, 0.1);
+  background:white;
   display: flex;
   justify-content: center;
   align-items: center;
