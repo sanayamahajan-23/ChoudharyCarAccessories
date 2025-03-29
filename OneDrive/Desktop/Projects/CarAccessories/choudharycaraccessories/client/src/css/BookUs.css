@@ -100,7 +100,7 @@
 .other-ways-container {
   flex: 1;
   background: black;
-  padding: 0 20px;
+  padding: 0 5px;
   border-radius: 10px;
   border: 2px solid #c32227;
   min-width: 350px;
@@ -146,15 +146,33 @@
   background: transparent;
   color: #c32227;
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .book-us-content {
-    flex-direction: column;
+  /* Fix Button Overflow */
+  .book-appointment-btn {
+    width: 90%;  /* Ensure it doesn't exceed screen width */
+    max-width: 350px; /* Prevent excessive stretching */
+    margin: 0 auto 20px; /* Center it properly */
+    display: block;
   }
 
-  .appointment-form,
+  /* Fix Other Ways Container */
   .other-ways-container {
-    width: 100%;
+    width: 90%; /* Reduce width for smaller screens */
+    max-width: 350px; /* Keep it within screen limits */
+    margin: 0 auto; /* Center it */
+    padding: 15px; /* Adjust padding */
+  }
+
+  /* Fix Contact Header */
+  .other-ways-header {
+    width: auto; /* Adjust to content width */
+    text-align: center; /* Center the text */
+    margin: 0 auto 15px; /* Center and space it */
+  }
+
+  /* Ensure Content Stays Inside */
+  .book-us-content {
+    align-items: center; /* Keep everything centered */
+    text-align: center;
   }
 }

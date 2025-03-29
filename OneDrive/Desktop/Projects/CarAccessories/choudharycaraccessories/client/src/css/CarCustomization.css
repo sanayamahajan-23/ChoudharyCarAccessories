@@ -1,7 +1,7 @@
 /* Container */
 .car-customization-container {
   width: 100%;
-  padding: 0 20px;
+  padding: 40px 20px;
   background-color: black;
   color: white;
   display: flex;
@@ -136,61 +136,97 @@
 .car-img:not(.slide-bottom) {
   transform: translateX(-50%) translateY(100px); /* Start off-screen */
 }
-@media (min-width:769px) and (max-width:1024px){
-  .car-customization-container .appointment-btn{
-    position:relative;
-    top:50px;/* Add space between button and footer */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .car-customization-container .appointment-btn {
+    position: relative;
+    top: 50px; /* Add space between button and footer */
     left: 10px;
   }
 }
-/* Responsive for Mobile */
+/* ✅ Ensure Mobile Layout Stacks Text and Animation */
 @media (max-width: 768px) {
-  .service-content {
+  .car-customization-container {
+    padding-top: 50px;
+  }
+  .content-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .road-img {
-    width: 100%;
-    height: 100%;
-  }
-  .service-info {
-    width: 100%;
-  }
-  road1{
-    gap:0;
-    margin:0;
-    padding:0;
-  }
-  .road2 {
-    display: none;
-  }
-  .road-section {
-    width: 100%;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  .road3 {
-    display: none;
-  }
-  .text-section {
-    display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically */
     align-items: center;
     text-align: center;
   }
 
-  .sub-service-list {
+  /* ✅ Ensure CarRoadMobile appears BELOW the text */
+  .car-road-mobile-container {
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 15px; /* Reduce space below sub-services */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Space between text and animation */
   }
-  .car-customization-container {
-    padding-top: 0;
+
+  /* ✅ Ensure the road container is properly defined */
+  .road-container-mobile {
+    width: 100vw; /* Full viewport width */
+    max-width: 100%;
+    position: relative; /* Parent must be relative for absolute children */
+    min-height: 200px; /* Increased height to prevent cutting */
+    overflow: visible; /* Change from hidden to visible */
+    z-index: 10; /* Road should be lower than cars */
+    padding-bottom: 60px; /* Extra spacing to prevent cutoff */
   }
+
+  /* ✅ Ensure Road Image is properly sized */
+  .road-img {
+    width: 100vw; /* Ensure full width */
+    height: auto;
+    object-fit: contain; /* Prevent cutting */
+    display: block; /* Remove extra spacing */
+    margin-bottom: 50px; /* Increase space between road images */
+  }
+
+  /* ✅ Position Cars Correctly */
+  .car-img-left,
+  .car-img-right {
+    position: absolute;
+    width: 150px; /* Adjust size as needed */
+    top: 40%; /* Position in the middle of the road */
+    transform: translateY(-50%); /* Center vertically */
+    z-index: 20; /* Higher than the road */
+    transition: transform 1.2s ease-out;
+  }
+
+  /* ✅ Adjust Car Positions */
+  .car-img-left {
+    left: 10%;
+  }
+
+  .car-img-right {
+    right: 10%;
+  }
+
+  /* ✅ Fix Car Animation */
+  .slide-left {
+    transform: translateX(50px) translateY(-50%);
+  }
+
+  .slide-right {
+    transform: translateX(-50px) translateY(-50%);
+  }
+
+  .sub-service-list {
+     display: flex;
+    flex-direction: column;
+  
+  }
+
   .car-customization-container .appointment-btn {
-    position:relative;
-    top:20px;/* Add space between button and footer */
-    left: 10px;
+    order: 2; /* Ensure it comes after the service list */
+    margin-top: 20px; /* Space between the list and button */
+    margin-bottom: 40px; /* Adjust space above the road */
+    position: relative;
+    left:5px;
+    width: 80%;
+    text-align: center;
+    z-index: 15; /* Ensure it's above road but below menu */
   }
 }

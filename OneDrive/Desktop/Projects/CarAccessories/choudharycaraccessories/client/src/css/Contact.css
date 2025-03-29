@@ -164,8 +164,8 @@
   }
 
   .contact-form {
-    width: 75%;
-    grid-column: 2;
+    width:100%;
+    grid-column: 1;
     grid-row: 1;
     margin-right: 0;
   }

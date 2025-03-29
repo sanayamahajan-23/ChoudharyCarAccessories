@@ -49,9 +49,10 @@ const ReviewSection = () => {
       <h2 className="section-title">Let's Hear from Our Clients</h2>
       <Swiper
         slidesPerView={1} // Default: 1 card per slide
-        spaceBetween={20}
+        spaceBetween={70}
+        centeredSlides={true}
         breakpoints={{
-          1224: { slidesPerView: 2 }, // Show 2 slides on larger screens
+          1024: { slidesPerView: 2 }, // Show 2 slides on larger screens
         }}
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}

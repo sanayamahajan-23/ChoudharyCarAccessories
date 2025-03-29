@@ -192,12 +192,12 @@
     padding-left: 40px;
   }
   .review-card {
-    width: 400px;
+    width: 500px;
     height: 200px;
   }
 
   .review-card-outline {
-    width: 400px;
+    width: 300px;
     height: 220px;
   }
 }

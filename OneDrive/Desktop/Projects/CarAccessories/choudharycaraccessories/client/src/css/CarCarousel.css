@@ -106,99 +106,94 @@ h2 {
     transform: translateX(0);
   }
 }
-@media (min-width: 585px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .carousel-container {
     height: 80vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, white 60%, black 30%);
+    background: linear-gradient(to bottom, white 60%, black 40%);
     justify-content: center;
     align-items: center;
+    text-align: center;
     overflow: hidden;
+    padding: 20px 0;
   }
 
   .carousel-slide {
     flex-direction: column;
-    text-align: center;
     align-items: center;
+    justify-content: center;
     height: 100%;
   }
 
   .car-text {
-    text-align: left;
+    text-align: center;
     width: 90%;
-    max-width: 600px; /* Ensures proper width */
+    max-width: 600px;
     position: relative;
-    left: 27%;
-    top: 40px; /* Adjust placement */
-    right: 0; /* Removes unwanted right push */
-    padding: 0 20px; /* Adds some spacing */
+    top: 0; /* Centering at the top */
+    left: 0;
+    right: 0;
+    padding: 0 20px;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    white-space: normal; /* Allows text to break into multiple lines */
   }
+
+  .car-text h2 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
   .car-text p {
     font-size: 18px;
-    max-width: 400px; /* Adjust width to force line break */
-    line-height: 1.4;
-    display: block;
-    margin: 0 0;
-    word-break: break-word;
+    line-height: 1.5;
+    margin-top: 10px;
   }
 
   .car-image {
-    max-width: 70%;
+    max-width: 80%;
     height: auto;
-    left: 20px;
+    position: relative;
     margin-top: 20px;
-    bottom: 10px;
   }
 }
-@media (max-width: 585px) {
+
+@media (max-width: 786px) {
   .carousel-container {
-    height: 80vh;
+    height: 60vh; /* Reduce height */
+    min-height: 500px; /* Ensures it doesn’t shrink too much */
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, white 60%, black 30%);
-    justify-content: center;
+    background: linear-gradient(to bottom, white 50%, black 50%);
+    justify-content: flex-start; /* Moves content higher */
     align-items: center;
     overflow: hidden;
-  }
-
-  .carousel-slide {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    height: 100%;
+    padding: 4px 0; /* Reduce padding */
   }
 
   .car-text {
-    text-align: left;
+    text-align: center;
     width: 90%;
-    max-width: 600px; /* Ensures proper width */
+    max-width: 400px;
     position: relative;
-    left: 70px;
-    top: 30px; /* Adjust placement */
-    right: 0; /* Removes unwanted right push */
-    padding: 0 20px; /* Adds some spacing */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal; /* Allows text to break into multiple lines */
+    top: -10px; /* Reduce spacing from top */
+    padding: 0px 5px 5px 5px;
   }
+
+  .car-text h2 {
+    font-size: 22px;
+    margin-bottom: 5px; /* Reduce spacing */
+  }
+
   .car-text p {
-    font-size: 18px;
-    max-width: 400px; /* Adjust width to force line break */
-    line-height: 1.4;
-    display: block;
-    margin: 0 0;
-    word-break: break-word;
+    font-size: 16px;
+    line-height: 1.3;
   }
 
   .car-image {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
-    left: 20px;
-    margin-top: 20px;
-    bottom: -30px;
+    position: relative;
+    margin-top: -90px; /* Move image up */
   }
 }
