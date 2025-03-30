@@ -46,7 +46,6 @@ const renderStars = (rating) => {
 const ReviewSection = () => {
   return (
     <section className="review-section">
-      <h2 className="section-title">Let's Hear from Our Clients</h2>
       <Swiper
         slidesPerView={1} // Default: 1 card per slide
         spaceBetween={70}

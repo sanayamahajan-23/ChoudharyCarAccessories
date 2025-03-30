@@ -93,51 +93,59 @@ const AboutUs = () => {
             </div>
           </div>
 
-          {/* Service Icons - Hidden in Mobile View */}
           <div className="services">
             <a href="/car-customization" className="service-item">
-              <div className="service-icon"></div>
+              <div className="service-icon">
+                <img src="/assets/icon1.png" alt="Car Customization" />
+              </div>
               <p>
-                Car <br />
-                Customization
+                Car <br /> Customization
               </p>
             </a>
             <a href="/interior-upgradation" className="service-item">
-              <div className="service-icon"></div>
+              <div className="service-icon">
+                <img src="/assets/icon2.png" alt="Interior Upgradation" />
+              </div>
               <p>
-                Interior
-                <br /> Upgrading
+                Interior <br /> Upgrading
               </p>
             </a>
             <a href="/car-accessories" className="service-item">
-              <div className="service-icon"></div>
+              <div className="service-icon">
+                <img src="/assets/icon4.png" alt="Car Accessories" />
+              </div>
               <p>
-                Car
-                <br /> Accessories
+                Car <br /> Accessories
               </p>
             </a>
             <a href="/music-system" className="service-item">
-              <div className="service-icon"></div>
+              <div className="service-icon">
+                <img src="/assets/icon3.png" alt="Music System" />
+              </div>
               <p>
-                Music System
-                <br /> Upgrading
+                Music System <br /> Upgrading
               </p>
             </a>
             <a href="/lighting-solutions" className="service-item">
-              <div className="service-icon"></div>
+              <div className="service-icon">
+                <img src="/assets/icon6.png" alt="Lighting Solutions" />
+              </div>
               <p>
                 Lighting <br /> Solutions
               </p>
             </a>
             <a href="/car-care" className="service-item">
-              <div className="service-icon"></div>
+              <div className="service-icon">
+                <img src="/assets/icon5.png" alt="Car Care" />
+              </div>
               <p>
-                Car
-                <br /> Care
+                Car <br /> Care
               </p>
             </a>
             <a href="/off-roading" className="service-item">
-              <div className="service-icon"></div>
+              <div className="service-icon">
+                <img src="/assets/icon7.png" alt="Off Roading" />
+              </div>
               <p>
                 Off Roading <br /> Trail/Trek
               </p>

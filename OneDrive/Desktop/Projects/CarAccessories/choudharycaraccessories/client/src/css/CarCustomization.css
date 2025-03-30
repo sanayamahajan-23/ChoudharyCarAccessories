@@ -1,4 +1,3 @@
-/* Container */
 .car-customization-container {
   width: 100%;
   padding: 40px 20px;
@@ -8,14 +7,14 @@
   justify-content: center;
 }
 
-/* Grid Layout */
+/* Layout */
 .content-container {
   display: grid;
-  grid-template-columns: 1.5fr 2.5fr; /* Info section (1.5), Road section (2.5) */
+  grid-template-columns: 1.5fr 2.5fr; /* Adjust proportion for text and image */
   gap: 30px;
   width: 100%;
   max-width: 1200px;
-  align-items: stretch;
+  align-items: center;
 }
 
 /* Text Section */
@@ -75,144 +74,34 @@
   border-bottom: none;
 }
 
-/* Road Section */
-.road-section {
+/* Static Image Section */
+.static-image-container {
   display: flex;
-  justify-content: flex-end;
-  align-items: stretzz;
-  gap: 20px;
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-/* Road Container */
-.road-container {
-  position: relative;
-  width: 180px;
-  height: 100vh; /* Full height of viewport */
-  overflow: hidden;
-  display: flex;
-  align-items: center; /* Center the road inside the container */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Road Image */
-.road-img {
+.static-image {
   width: 100%;
-  height: 100%; /* Ensure the road extends fully */
-  display: block;
-  position: absolute;
-  object-fit: cover; /* Stretch to fit the container */
-}
-/* Car Animation */
-.car-img {
-  position: absolute;
-  width: 200px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-100vh);
-  transition: transform 1.2s ease-out;
-}
-/* Car Animation */
-.car-img1 {
-  position: absolute;
-  width: 200px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-100vh);
-  transition: transform 1.2s ease-out;
+  max-width: 500px;
+  border-radius: 20px;
+  border: 5px solid #c32227;
+  object-fit: cover;
 }
 
-.slide-top {
-  transform: translateX(-50%) translateY(0) !important; /* Move down */
-}
-
-.car-img1:not(.slide-top) {
-  transform: translateX(-50%) translateY(-100px); /* Start off-screen */
-}
-
-/* Slide from Bottom (Road 3) */
-.slide-bottom {
-  transform: translateX(-50%) translateY(-10vh); /* Move up */
-}
-
-.car-img:not(.slide-bottom) {
-  transform: translateX(-50%) translateY(100px); /* Start off-screen */
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .car-customization-container .appointment-btn {
-    position: relative;
-    top: 50px; /* Add space between button and footer */
-    left: 10px;
-  }
-}
-/* ✅ Ensure Mobile Layout Stacks Text and Animation */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .car-customization-container {
-    padding-top: 50px;
-  }
   .content-container {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  /* ✅ Ensure CarRoadMobile appears BELOW the text */
-  .car-road-mobile-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px; /* Space between text and animation */
+  .static-image {
+    width: 90%;
+    max-width: 350px;
   }
-
-  /* ✅ Ensure the road container is properly defined */
-  .road-container-mobile {
-    width: 100vw; /* Full viewport width */
-    max-width: 100%;
-    position: relative; /* Parent must be relative for absolute children */
-    min-height: 200px; /* Increased height to prevent cutting */
-    overflow: visible; /* Change from hidden to visible */
-    z-index: 10; /* Road should be lower than cars */
-    padding-bottom: 60px; /* Extra spacing to prevent cutoff */
-  }
-
-  /* ✅ Ensure Road Image is properly sized */
-  .road-img {
-    width: 100vw; /* Ensure full width */
-    height: auto;
-    object-fit: contain; /* Prevent cutting */
-    display: block; /* Remove extra spacing */
-    margin-bottom: 50px; /* Increase space between road images */
-  }
-
-  /* ✅ Position Cars Correctly */
-  .car-img-left,
-  .car-img-right {
-    position: absolute;
-    width: 150px; /* Adjust size as needed */
-    top: 40%; /* Position in the middle of the road */
-    transform: translateY(-50%); /* Center vertically */
-    z-index: 20; /* Higher than the road */
-    transition: transform 1.2s ease-out;
-  }
-
-  /* ✅ Adjust Car Positions */
-  .car-img-left {
-    left: 10%;
-  }
-
-  .car-img-right {
-    right: 10%;
-  }
-
-  /* ✅ Fix Car Animation */
-  .slide-left {
-    transform: translateX(50px) translateY(-50%);
-  }
-
-  .slide-right {
-    transform: translateX(-50px) translateY(-50%);
-  }
-
   .sub-service-list {
      display: flex;
     flex-direction: column;

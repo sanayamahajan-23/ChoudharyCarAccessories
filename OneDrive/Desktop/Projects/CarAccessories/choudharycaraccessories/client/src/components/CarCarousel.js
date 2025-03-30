@@ -3,35 +3,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../css/CarCarousel.css"; // Import the CSS file for styling
 
 const carData = [
-  {
-    name: "BMW M5",
-    description: "Carbon fiber spoiler, performance exhaust, LED headlamps",
-    image: "/assets/car1.png",
-  },
-  {
-    name: "Audi R8",
-    description: "Custom body kit, lowered suspension, custom rims",
-    image: "/assets/car2.png",
-  },
-  {
-    name: "Mercedes-AMG GT",
-    description: "Matte black wrap, carbon fiber hood, sport seats",
-    image: "/assets/car3.png",
-  },
+  { name: "Mahindra Scorpio N", image: "/assets/car1.png" },
+  { name: "Mahindra Thar", image: "/assets/car2.png" },
+  { name: "Tata Safari", image: "/assets/car3.png" },
+  { name: "Tata Harrier", image: "/assets/car4.png" },
+  { name: "Hyundai Verna", image: "/assets/car5.png" },
+  { name: "BMW", image: "/assets/car6.png" },
+  { name: "Maruti Gypsy", image: "/assets/car7.png" },
+  { name: "Toyota Hilux", image: "/assets/car8.png" },
+  { name: "Toyota Corolla", image: "/assets/car9.png" },
 ];
 
 const CarCarousel = () => {
   const [index, setIndex] = useState(0);
   const [userInteracted, setUserInteracted] = useState(false);
+
   const nextSlide = () => {
     setUserInteracted(true);
     setIndex((prevIndex) => (prevIndex + 1) % carData.length);
   };
+
   useEffect(() => {
     if (userInteracted) {
       const resumeTimer = setTimeout(() => {
         setUserInteracted(false);
-      }, 5000); // Resume auto-slide after 10 seconds
+      }, 5000);
       return () => clearTimeout(resumeTimer);
     }
   }, [userInteracted]);
@@ -40,7 +36,7 @@ const CarCarousel = () => {
     if (!userInteracted) {
       const interval = setInterval(() => {
         setIndex((prevIndex) => (prevIndex + 1) % carData.length);
-      }, 7000); // Auto-slide every 5 seconds
+      }, 7000);
       return () => clearInterval(interval);
     }
   }, [userInteracted]);
@@ -56,7 +52,6 @@ const CarCarousel = () => {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
         >
-          {/* Text (Top Right) */}
           <motion.div
             className="car-text"
             initial={{ opacity: 0, y: -20 }}
@@ -65,9 +60,7 @@ const CarCarousel = () => {
             transition={{ duration: 0.5 }}
           >
             <h2>{carData[index].name}</h2>
-            <p>{carData[index].description}</p>
           </motion.div>
-          {/* Car Image (Left) */}
           <motion.img
             src={carData[index].image}
             alt={carData[index].name}
@@ -76,11 +69,10 @@ const CarCarousel = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.6 }}
+      
           />
         </motion.div>
       </AnimatePresence>
-      {/* Right Arrow Button */}
-
       <button className="arrow" onClick={nextSlide}>
         <img src="/assets/arrow.svg" alt="Next" />
       </button>

@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/CarCustomization.css";
 import PageTransition from "../components/PageTransition";
-import CarRoadDesktop from "../components/CarRoadDesktop"; // Desktop animation
-import CarRoadMobile from "../components/CarRoadMobile"; // Mobile animation
 
 const LightingSolutions = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <PageTransition>
@@ -21,7 +12,7 @@ const LightingSolutions = () => {
         className="car-customization-container"
         style={{ backgroundImage: `url("/assets/carbon-fibre.png")` }}
       >
-        <div className={`content-container ${isMobile ? "mobile-layout" : ""}`}>
+        <div className="content-container">
           {/* Text Section */}
           <div className="text-section">
             <h1 className="service-title">Lighting Solutions</h1>
@@ -43,15 +34,14 @@ const LightingSolutions = () => {
             </div>
           </div>
 
-          {/* ✅ Ensure this is inside the same container but below */}
-          {isMobile && (
-            <div className="car-road-mobile-container">
-              <CarRoadMobile />
-            </div>
-          )}
-
-          {/* Desktop: Keep beside the text */}
-          {!isMobile && <CarRoadDesktop />}
+          {/* Static Image Section */}
+          <div className="static-image-container">
+            <img
+              src="/assets/service1.jpeg"
+              alt="Lighting Solutions"
+              className="static-image"
+            />
+          </div>
         </div>
       </div>
     </PageTransition>

@@ -7,32 +7,32 @@ import Contact from "../components/Contact"
 import "../css/Home.css";
 import PageWrapper from "../components/PageWrapper";
 const services = [
-  { title: "Car Customization", image: "/car.png", link: "/car-customization" },
+  { title: "Car Customization", image: "/assets/icon1.png", link: "/car-customization" },
   {
     title: "Interior Upgradation",
-    image: "/interior.png",
+    image: "/assets/icon2.png",
     link: "/interior-upgradation",
   },
   {
     title: "Music System Upgradation",
-    image: "/music.png",
+    image: "/assets/icon3.png",
     link: "/music-system",
   },
   {
     title: "Car Accessories",
-    image: "/accessories.png",
+    image: "/assets/icon4.png",
     link: "/car-accessories",
   },
-  { title: "Car Care", image: "/car-care.png", link: "/car-care" },
+  { title: "Car Care", image: "/assets/icon5.png", link: "/car-care" },
   {
     title: "Lighting Solutions",
-    image: "/lighting.png",
+    image: "/assets/icon6.png",
     link: "/lighting-solutions",
   },
 
   {
     title: "Off-Roading TrailTrek",
-    image: "/offroad.png",
+    image: "/assets/icon7.png",
     link: "/off-roading",
   },
 ];
@@ -64,7 +64,7 @@ const Home = () => {
               className="service-card"
             >
               <img src={service.image} alt={service.title} />
-              <h2>{service.title}</h2>
+              <h1>{service.title}</h1>
             </motion.div>
           ))}
         </div>
